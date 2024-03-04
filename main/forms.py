@@ -4,7 +4,12 @@ from .models import Task, Category, Comment, Attachment
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'description', 'status', 'priority', 'category', 'due_date']
+        fields = ['title',
+                  'description', 
+                  'status', 
+                  'priority', 
+                  'category', 
+                  'due_date']
 
 class CategoryForm(forms.ModelForm):
     class Meta:

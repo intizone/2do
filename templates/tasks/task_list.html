@@ -1,0 +1,20 @@
+
+    <h1>Task List:</h1>
+    <ul>
+        {% for task in tasks %}
+            <li><h3>{{ task.title }}</h3><h5>{{ task.description }} till -y {{task.due_date}}</h5></li>
+        {% empty %}
+            <li>No tasks found.</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <h1>Create new task:</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>
+
+

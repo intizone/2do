@@ -1,0 +1,17 @@
+<h1>Add new category</h1>
+<form method="POST" action="{% url 'category_list' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<br><br><br><br>
+<h1>EXISTING CATEGORIES:</h1>
+{% for category in categories %}
+    <div>
+        <p><h2>{{category.id}}-{{ category.name }}</h2>
+            <h5>{{ category.color }}</h5>
+    </div>
+    
+{% empty %}
+    <p>No categories found.</p>
+{% endfor %}
